@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { DigimonsService, IDigimon } from '../services/digimons.service';
+import { SeoService } from '../services/seo.service';
 
 @Component({
   selector: 'app-lista-digimons',
@@ -13,7 +14,8 @@ export class ListaDigimonsComponent implements OnInit {
 
   constructor(
     private digimonsService: DigimonsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private seoService: SeoService
   ) { }
 
   ngOnInit(): void {
@@ -23,6 +25,13 @@ export class ListaDigimonsComponent implements OnInit {
         this.titulo = 'Digimons: ' + level;
         this.digimonsService.getDigimonsByLevel(level)
           .subscribe((digimons: IDigimon[]) => this.digimons = digimons);
+        this.seoService.cambiarInfoSeo(
+          this.titulo,
+          {
+            keywords: `digimon, ${level}, api`,
+            name: this.titulo
+          }
+        );
       } else {
         this.digimonsService.getDigimons()
           .subscribe((digimons: IDigimon[]) => this.digimons = digimons);
