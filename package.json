@@ -10,7 +10,9 @@
     "dev:ssr": "ng run ejemplo-angular-universal:serve-ssr",
     "serve:ssr": "node dist/ejemplo-angular-universal/server/main.js",
     "build:ssr": "ng build && ng run ejemplo-angular-universal:server",
-    "prerender": "ng run ejemplo-angular-universal:prerender"
+    "prerender": "ng run ejemplo-angular-universal:prerender",
+    "build:prerender": "node generate-routes.js",
+    "serve:prerender": "npmx http-server dist/ejemplo-angular-universal/browser"
   },
   "private": true,
   "dependencies": {
@@ -25,11 +27,13 @@
     "@angular/router": "~13.3.0",
     "@nguniversal/express-engine": "^13.1.1",
     "express": "^4.15.2",
+    "jsonwebtoken": "^8.5.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.8",
     "@angular-devkit/build-angular": "~13.3.6",
     "@angular/cli": "~13.3.6",
     "@angular/compiler-cli": "~13.3.0",
