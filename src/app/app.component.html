@@ -1,3 +1,14 @@
+<ng-container *ngIf="!loggedIn; else btnLogout">
+  <input type="text" placeholder="username" #usernameInput>
+  <input type="text" placeholder="password" #passwordInput>
+  <button type="button" (click)="login(usernameInput, passwordInput)">Login</button>
+</ng-container>
+<ng-template #btnLogout>
+  <button (click)="getDatos()">Obtener datos</button>
+  <p>Bienvenido {{nombre}}</p>
+  <button (click)="logout()">Logout</button>
+</ng-template>
+
 <a routerLink="/">Inicio</a><br/>
 
 <div *ngFor="let level of levels">
