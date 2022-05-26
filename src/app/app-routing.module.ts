@@ -5,7 +5,7 @@ import { ListaDigimonsComponent } from './lista-digimons/lista-digimons.componen
 
 const routes: Routes = [
   { path: '', component: ListaDigimonsComponent},
-  { path: 'level:level', component: ListaDigimonsComponent},
+  { path: 'level/:level', component: ListaDigimonsComponent},
   { path: 'name/:name', component: DigimonComponent}
 ];
 

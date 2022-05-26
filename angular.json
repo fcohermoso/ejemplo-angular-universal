@@ -142,8 +142,15 @@
           "builder": "@nguniversal/builders:prerender",
           "options": {
             "routes": [
-              "/"
-            ]
+              "/",
+              "/level/mega",
+              "/level/ultimate",
+              "/level/fresh",
+              "/level/rookie",
+              "/level/champion",
+              "/level/armor"
+            ],
+            "routesFile": "digimons-routes.txt"
           },
           "configurations": {
             "production": {
