@@ -1,1 +1,5 @@
-<p>digimon works!</p>
+<div *ngIf="digimon">
+  <h2>{{digimon.name}}</h2>
+  <img [src]="digimon.img" alt="Imagen de {{digimon.name}}" width="300">
+  <p>Level: <a [routerLink]="['/level', digimon.level]"></a></p>
+</div>

@@ -23,8 +23,8 @@ export class DigimonsService {
     return this.http.get<IDigimon[]>(this.URL);
   }
 
-  getDigimonsByLevel(level: string): Observable<IDigimon> {
-    return this.http.get<IDigimon>(`${this.URL}/level/${level}`);
+  getDigimonsByLevel(level: string): Observable<IDigimon[]> {
+    return this.http.get<IDigimon[]>(`${this.URL}/level/${level}`);
   }
 
   getDigimonsByName(name: string): Observable<IDigimon> {

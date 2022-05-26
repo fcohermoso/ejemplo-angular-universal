@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ejemplo-angular-universal';
+
+  levels = [
+    'In Training',
+    'Rookie',
+    'Champion',
+    'Ultimate',
+    'Mega',
+    'Fresh',
+    'Armor'
+  ]
 }

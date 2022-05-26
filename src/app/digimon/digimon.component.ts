@@ -18,7 +18,8 @@ export class DigimonComponent implements OnInit {
 
   ngOnInit(): void {
     const name = this.route.snapshot.paramMap.get('name');
-    this.digimonsService.getDigimonsByName(name as string);
+    this.digimonsService.getDigimonsByName(name as string)
+      .subscribe((digimon) => this.digimon = digimon);
   }
 
 

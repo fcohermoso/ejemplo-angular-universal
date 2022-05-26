@@ -1,1 +1,8 @@
-<p>lista-digimons works!</p>
+<h2>{{titulo}}</h2>
+
+<ul>
+  <li *ngFor="let digimon of digimons">
+    <a [routerLink]="['/name', digimon.name]">Ver info de: {{digimon.name}}</a>
+  </li>
+</ul>
+
